@@ -3,14 +3,14 @@ top_heights = [6, 9, 5, 7, 4]
 
 def get_receiver_top_orders(heights):
     answer = [0] * len(heights) # 5개 배열 생성
-
-    #먼저 탑을 뽑자
-    while heights:
-        height = heights.pop() # 첫번째에서는 height 값이 4
-        for i in range(len(heights) -1 ,-1,-1):
-            if height < heights[i]:
-                answer[len(heights)] = i + 1
+    # 더 큰 값에서만 수신함. 스택으로 풀기 가능?
+    for height in range(len(heights)-1, -1, -1):  # 5개의 값이 나오겠지. 근데 뒤에서부터하자. 스택이니까
+        height = heights.pop()
+        for i in range(len(heights) -2, -1 ,-1):
+            if height <= heights[i]:
+                answer[len(heights)] = i + 2
                 break
+
     return answer
 
 
