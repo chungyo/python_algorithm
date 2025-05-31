@@ -21,7 +21,7 @@ graph = {
 
 def bfs_queue(adj_graph, start_node):
     queue = deque([start_node]) # queue[1]
-    visited = []
+    visited_node = []
 
     while queue:
         current_node = queue.popleft() # current_node = 1
