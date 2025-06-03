@@ -25,7 +25,7 @@ def bfs_queue(adj_graph, start_node):
 
     while queue:
         current_node = queue.popleft() # current_node = 1
-        visited.append(current_node) # visited = [1]
+        visited_node.append(current_node) # visited = [1]
         for adj_node in adj_graph[current_node]: # adj_node -> 2일때 , 그다음 3일때 ->
             if adj_node not in visited: # 2가 visited에 없으니
                 queue.append(adj_node) # queue 뒤에 2를 넣어줌 => queue[2] -> queue[2,3] -> queue[2,3,4]
