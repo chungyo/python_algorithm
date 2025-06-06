@@ -21,16 +21,16 @@ graph = {
 
 def bfs_queue(adj_graph, start_node):
     queue = deque([start_node]) # queue[1]
-    visited_node = []
+    visited_node_real = []
 
     while queue:
         current_node = queue.popleft() # current_node = 1
-        visited_node.append(current_node) # visited = [1]
+        visited_node_real.append(current_node) # visited = [1]
         for adj_node in adj_graph[current_node]: # adj_node -> 2일때 , 그다음 3일때 ->
             if adj_node not in visited_node: # 2가 visited에 없으니
                 queue.append(adj_node) # queue 뒤에 2를 넣어줌 => queue[2] -> queue[2,3] -> queue[2,3,4]
 
-    return visited_node
+    return visited_node_real
 
 
 print(bfs_queue(graph, 1))  # 1 이 시작노드입니다!
